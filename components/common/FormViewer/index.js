@@ -6,6 +6,7 @@ import FormStepper from '../FormStepper';
 import { buildValidationSchema } from '../../../helper';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { ToastProvider } from '../../forms/Toaster/ToastContext';
 
 const FormViewer = ({ model = null }) => {
   const [page, setPage] = useState(0);
@@ -29,40 +30,42 @@ const FormViewer = ({ model = null }) => {
 
   if (model)
     return (
-      <div className="w-full">
-        <FormHeader title={model.title} />
-        <div
-          className={`w-full h-[calc(100vh_-_48px)] flex ${
-            model.showProgressBar ? 'flex-col' : 'flex-row'
-          }`}
-        >
-          {model?.pages?.length === 1 ? null : model.showProgressBar ? (
-            <FormStepper
-              details={model.pages?.map(x => ({
-                name: x.name,
-                title: x.title,
-              }))}
+      <ToastProvider>
+        <div className="w-full">
+          <FormHeader title={model.title} />
+          <div
+            className={`w-full h-[calc(100vh_-_48px)] flex ${
+              model.showProgressBar ? 'flex-col' : 'flex-row'
+            }`}
+          >
+            {model?.pages?.length === 1 ? null : model.showProgressBar ? (
+              <FormStepper
+                details={model.pages?.map(x => ({
+                  name: x.name,
+                  title: x.title,
+                }))}
+                page={page}
+                onPageChange={handleChangePage}
+              />
+            ) : (
+              <FormSidebar
+                details={model.pages?.map(x => ({
+                  name: x.name,
+                  title: x.title,
+                }))}
+                page={page}
+                onPageChange={handleChangePage}
+              />
+            )}
+            <FormContent
+              model={model}
               page={page}
+              methods={methods}
               onPageChange={handleChangePage}
             />
-          ) : (
-            <FormSidebar
-              details={model.pages?.map(x => ({
-                name: x.name,
-                title: x.title,
-              }))}
-              page={page}
-              onPageChange={handleChangePage}
-            />
-          )}
-          <FormContent
-            model={model}
-            page={page}
-            methods={methods}
-            onPageChange={handleChangePage}
-          />
+          </div>
         </div>
-      </div>
+      </ToastProvider>
     );
   else return null;
 };

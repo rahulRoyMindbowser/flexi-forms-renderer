@@ -147,13 +147,14 @@ export const renderElement = element => {
       return (
         <FileUpload
           id={element.name}
-          type="select"
+          // type="select"
           required={element.isRequired}
           placeholder={element.placeholder}
           name={element.name}
           label={element.title}
           span={element.span}
-          visibleIf={element.visibleIf}
+          maxFiles={1}
+          // visibleIf={element.visibleIf}
         />
       );
     case 'dropdown':
@@ -204,12 +205,14 @@ export const buildValidationSchema = data => {
         case 'boolean':
         case 'date':
         case 'radiogroup':
-        case 'file':
         case 'dropdown':
           schema[element.name] = yup.string();
           break;
         case 'checkbox':
           schema[element.name] = yup.array().of(yup.string());
+          break;
+        case 'file':
+          schema[element.name] = yup.mixed();
           break;
         default:
           break;

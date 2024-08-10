@@ -145,7 +145,9 @@ const FileSelector = ({
         }}
         onDragLeave={() => setDragging(false)}
         onClick={handleClick}
-        className="relative h-20 flex items-center justify-center rounded-lg cursor-pointer border border-dashed p-3 "
+        className={`relative h-20 flex ${
+          files.length > 0 ? '' : 'items-center'
+        } justify-center overflow-auto rounded-lg cursor-pointer border border-dashed p-3 `}
         style={{
           borderColor: dragging ? 'green' : 'gray',
         }}
@@ -169,12 +171,13 @@ const FileSelector = ({
                 <li key={index}>
                   {file.file.name}{' '}
                   <button
+                    className="ml-1"
                     onClick={e => {
                       e.stopPropagation();
                       removeFile(index);
                     }}
                   >
-                    Remove
+                    &#10060;
                   </button>
                 </li>
               ))}

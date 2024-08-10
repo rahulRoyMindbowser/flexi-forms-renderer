@@ -19,7 +19,7 @@ const FormStepper = ({ details = [], page = 0, onPageChange }) => {
       <ol className="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
         {details.map((x, i) =>
           details.length - 1 === i ? (
-            <li className="flex items-center" onClick={() => onPageChange(i)}>
+            <li key={x?.name} className="flex items-center" onClick={() => onPageChange(i)}>
               {/* {page === i ? done : null} */}
               <span
                 className={`h-8 w-8 rounded-full cursor-pointer flex items-center justify-center me-2 ${
@@ -31,6 +31,7 @@ const FormStepper = ({ details = [], page = 0, onPageChange }) => {
             </li>
           ) : (
             <li
+              key={x?.name}
               className={`flex md:w-full items-center sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-4 after:hidden sm:after:inline-block after:mx-2 xl:after:mx-4 ${
                 page > i ? 'text-white after:border-blue-500' : 'after:border-gray-200'
               }`}

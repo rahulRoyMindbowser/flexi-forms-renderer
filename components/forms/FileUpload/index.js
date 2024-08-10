@@ -35,8 +35,8 @@ const FileUpload = ({
   showErrorIcon = false,
   error = '',
   required = false,
-  maxFiles = Infinity,
-  maxFileSize = Infinity,
+  maxFiles = 5,
+  maxFileSize = 5242880,
   allowedFileExtensions = [],
   span,
 }) => {
