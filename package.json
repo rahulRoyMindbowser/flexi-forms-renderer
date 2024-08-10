@@ -1,0 +1,44 @@
+{
+  "name": "@mindbowser_inc/flexi-forms-renderer",
+  "version": "0.0.1",
+  "description": "Your forms, Your rules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "@mindbowser_inc/flexi-forms-renderer",
+    "form-renderer",
+    "flexi-forms",
+    "flexi-forms-renderer"
+  ],
+  "author": "Team DEV-DXD",
+  "license": "ISC",
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "flowbite": "^2.5.1",
+    "react": "^18.3.1",
+    "react-date-picker": "^11.0.0",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.52.2",
+    "react-phone-input-2": "^2.15.1",
+    "react-rating": "^2.0.5",
+    "react-scripts": "5.0.1",
+    "yup": "^1.4.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.7"
+  }
+}
