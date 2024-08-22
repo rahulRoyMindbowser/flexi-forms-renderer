@@ -1,10 +1,11 @@
 {
   "name": "@mindbowser_inc/flexi-forms-renderer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Your forms, Your rules",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-lib": "rollup -c"
   },
   "keywords": [
     "@mindbowser_inc/flexi-forms-renderer",
@@ -39,6 +40,25 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-runtime": "^7.24.7",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.1.3",
+    "prop-types": "^15.8.1",
+    "rollup": "^2.79.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-image": "^1.0.2",
+    "rollup-plugin-img": "^1.1.0",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-styles": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
     "tailwindcss": "^3.4.7"
   },
   "repository": {

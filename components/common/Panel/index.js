@@ -1,3 +1,6 @@
+/* eslint-disable strict */
+'use strict';
+
 import React from 'react';
 import { renderElement, VisibleIfRegex } from '../../../helper';
 import { useFormContext } from 'react-hook-form';

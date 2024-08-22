@@ -1,3 +1,6 @@
+/* eslint-disable strict */
+'use strict';
+
 import React, { useMemo, useState } from 'react';
 import FormHeader from '../FormHeader';
 import FormSidebar from '../FormSidebar';
@@ -7,8 +10,9 @@ import { buildValidationSchema } from '../../../helper';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { ToastProvider } from '../../forms/Toaster/ToastContext';
+import PropTypes from "prop-types";
 
-const FormViewer = ({ model = null }) => {
+function FormViewer({ model = null }) {
   const [page, setPage] = useState(0);
 
   const handleChangePage = p => {
@@ -69,5 +73,9 @@ const FormViewer = ({ model = null }) => {
     );
   else return null;
 };
+
+FormViewer.prototype = {
+  model: PropTypes.object,
+}
 
 export default FormViewer;

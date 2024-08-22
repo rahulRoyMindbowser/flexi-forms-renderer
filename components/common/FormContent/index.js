@@ -1,3 +1,6 @@
+/* eslint-disable strict */
+'use strict';
+
 import React, { useMemo } from 'react';
 import { renderElement } from '../../../helper';
 import { FormProvider } from 'react-hook-form';

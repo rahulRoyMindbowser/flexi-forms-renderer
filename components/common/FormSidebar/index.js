@@ -1,3 +1,6 @@
+/* eslint-disable strict */
+'use strict';
+
 import React from 'react';
 
 const FormSidebar = ({ details = [], page, onPageChange }) => {
